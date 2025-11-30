@@ -584,13 +584,64 @@ h2::after {
     margin-top: 5px;
 }
 
-.copy-icon {
-    font-size: 1.2rem;
+/* --- FIX BUTTON COPY FOR MOBILE --- */
+
+/* Wrapper Tombol Copy */
+.btn-copy {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 15px; /* Padding besar agar mudah disentuh di HP */
+    border-radius: 50px;
     cursor: pointer;
-    opacity: 0.7;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    /* Pastikan tombol selalu di atas */
+    position: relative; 
+    z-index: 10;
 }
-.copy-icon:hover { opacity: 1; }
+
+/* Efek saat ditekan (Active state untuk HP) */
+.btn-copy:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.btn-copy:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Teks "Salin" (Opsional, bisa dihilangkan di layar sangat kecil) */
+.copy-text {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Mobile Update */
+@media (max-width: 480px) {
+    .bank-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .bank-info { 
+        margin-left: 0; 
+        text-align: center; 
+        margin-bottom: 10px;
+    }
+
+    /* Tombol Copy di HP jadi agak lebar biar gampang dipencet */
+    .btn-copy {
+        width: 100%; 
+        justify-content: center;
+        padding: 12px; /* Area sentuh makin besar */
+    }
+}
 
 /* Responsive Mobile untuk Bank Card */
 @media (max-width: 480px) {

@@ -155,10 +155,14 @@
             <div class="bank-card">
                 <div class="bank-logo">BCA</div>
                 <div class="bank-info">
-                    <span class="acc-number">1921306470</span>
-                    <span class="acc-name">Novi Aulia Agustin</span>
+                <span class="acc-number" id="rek-number">1921306470</span>
+                <span class="acc-name">Novi Aulia Agustin</span>
                 </div>
-                <i class="fas fa-copy copy-icon" title="Copy Number"></i>
+                
+                <button class="btn-copy" onclick="copyRekening()">
+                <i class="fas fa-copy copy-icon"></i> 
+                <span class="copy-text">Salin</span>
+                </button>
             </div>
         </div>
     </section>
@@ -412,6 +416,38 @@
 
             // Buka WhatsApp di tab baru
             window.open(url, '_blank');
+        }
+
+        // --- 4. Logic Salin Nomor Rekening (Support Mobile) ---
+        function copyRekening() {
+            const textToCopy = "1921306470"; // Nomor Rekening
+            const btnCopy = document.querySelector('.btn-copy');
+            const icon = btnCopy.querySelector('i');
+            const text = btnCopy.querySelector('.copy-text');
+
+            // Cara Copy Modern (Bekerja di HP Android/iPhone)
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                
+                // Ubah Tampilan Tombol jadi "Berhasil"
+                icon.classList.remove('fa-copy');
+                icon.classList.add('fa-check'); // Ikon Check
+                text.innerText = "Disalin!";
+                btnCopy.style.background = "#25D366"; // Warna Hijau
+                btnCopy.style.borderColor = "#25D366";
+
+                // Kembalikan ke semula setelah 2 detik
+                setTimeout(() => {
+                    icon.classList.remove('fa-check');
+                    icon.classList.add('fa-copy');
+                    text.innerText = "Salin";
+                    btnCopy.style.background = "rgba(255, 255, 255, 0.2)";
+                    btnCopy.style.borderColor = "rgba(255, 255, 255, 0.3)";
+                }, 2000);
+
+            }).catch(err => {
+                console.error('Gagal menyalin', err);
+                alert("Gagal menyalin otomatis. Silakan salin manual.");
+            });
         }
     </script>
 </body>
