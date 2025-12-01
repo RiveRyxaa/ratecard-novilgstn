@@ -50,7 +50,7 @@
         // --- 3. Logic Pesan WhatsApp Otomatis ---
         function pesanWhatsApp(layanan, harga) {
             // GANTI NOMOR WA DI SINI (Contoh: 628123456789)
-            const nomorWA = "6281249554812"; 
+            const nomorWA = "6282140305590"; 
 
             // Format Pesan Otomatis
             const pesan = `Halo Kak Novi, saya tertarik untuk kerja sama.\n\nSaya ingin memesan paket:\n*${layanan}* seharga *${harga}*\n\nMohon info ketersediaan jadwalnya. Terima kasih!`;

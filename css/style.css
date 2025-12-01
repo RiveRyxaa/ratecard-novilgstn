@@ -759,3 +759,46 @@ h2::after {
     70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
+
+/* --- BRAND AMBASSADOR CARD (GOLD THEME) --- */
+
+.price-card.ambassador {
+    border: 2px solid #FFD700; /* Garis Emas */
+    background: linear-gradient(to bottom right, rgba(255, 215, 0, 0.05), #1a1a1a); /* Gradasi hitam ke emas tipis */
+    transform: scale(1.02); /* Sedikit lebih besar */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.price-card.ambassador:hover {
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* Cahaya emas saat disorot */
+    border-color: #FFD700;
+}
+
+/* Ubah warna ikon dan harga jadi Emas khusus kartu ini */
+.price-card.ambassador .icon-service,
+.price-card.ambassador .price {
+    color: #FFD700;
+}
+
+/* Badge Exclusive di atas */
+.price-card.ambassador .badge {
+    background: #FFD700;
+    color: #000; /* Tulisan hitam biar kontras */
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Tombol Apply Emas */
+.price-card.ambassador .btn-order {
+    border-color: #FFD700;
+    color: #fff;
+}
+
+.price-card.ambassador .btn-order:hover {
+    background: #FFD700;
+    color: #000; /* Teks jadi hitam saat hover */
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+.price-card.ambassador .btn-order:hover i {
+    color: #000;
+}
